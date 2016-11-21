@@ -4,7 +4,7 @@ OctoSettings* OctoSettings::s_instance = 0;
 
 OctoSettings::OctoSettings()
 {
-  m_general = new OctoSettingsGeneral(this);
+  m_general = new OctoSettingsGeneral;
   connect(m_general, SIGNAL(workspaceDirChanged(QString)),
           SLOT(workspaceDirChanged(QString)));
   m_workspace = new OctoSettingsWorkspace(m_general);

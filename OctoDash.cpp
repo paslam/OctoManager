@@ -2,7 +2,8 @@
 #include "OctoButtonProject.h"
 #include "OctoButtonManager.h"
 #include "OctoSettings.h"
-#include <cmath>
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 OctoDash::OctoDash(QWidget *parent)
   : QWidget(parent)

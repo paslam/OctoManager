@@ -4,11 +4,11 @@
 #include <QSettings>
 
 class OctoClient;
-class OctoSettingsGeneral : protected QSettings
+class OctoSettingsGeneral : public QSettings
 {
   Q_OBJECT
 public:
-  explicit OctoSettingsGeneral(QObject* parent);
+  explicit OctoSettingsGeneral();
   ~OctoSettingsGeneral();
 
   void setWorkspaceDir(const QString& path);
