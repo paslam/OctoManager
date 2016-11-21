@@ -13,10 +13,18 @@ OctoDash::OctoDash(QWidget *parent)
   connect(managerBtn, SIGNAL(showManager()), SIGNAL(showManager()));
 
   const QList<OctoProject*> & projects = settings()->workspace()->projects();
+  OctoProject* activeProject = settings()->workspace()->activeProject();
+  int offset = 0;
+  if(activeProject)
+  {
+    offset = projects.indexOf(activeProject);
+  }
+
   double radius = 200;
   for(int i = 0; i < projects.count(); ++i)
   {
-    OctoProject* project = projects[i];
+    int offsetId = (i + offset) % projects.count();
+    OctoProject* project = projects[offsetId];
     OctoButtonProject* projectBtn = new OctoButtonProject(project, this);
     connect(projectBtn, SIGNAL(showFolder(QString)), SIGNAL(showFolder(QString)));
 
