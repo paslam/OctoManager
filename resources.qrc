@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>OctoManagerStyle.css</file>
+        <file>OctoManagerBanner.png</file>
+    </qresource>
+</RCC>
