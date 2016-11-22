@@ -1,4 +1,4 @@
-#include "OctoClientmanagerview.h"
+#include "OctoClientManagerview.h"
 #include "ui_octoclientmanagerview.h"
 #include <QKeyEvent>
 #include <QFocusEvent>

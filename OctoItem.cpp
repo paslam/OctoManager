@@ -1,7 +1,8 @@
 #include "OctoItem.h"
 #include <QUuid>
 
-OctoItem::OctoItem(QObject *parent) : QObject(parent)
+OctoItem::OctoItem(QObject *parent) :
+  QObject(parent)
 {
   m_uuid = QUuid::createUuid().toString();
 }
@@ -20,6 +21,7 @@ void OctoItem::setName(const QString &name)
 {
   m_name = name;
 }
+
 QString OctoItem::uuid() const
 {
   return m_uuid;

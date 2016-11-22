@@ -1,16 +1,16 @@
 #ifndef OCTODASHLOGIC_H
 #define OCTODASHLOGIC_H
 
-#include <QObject>
+#include <QGraphicsScene>
 
-class OctoDash;
+class OctoButtonManager;
 class OctoManagerView;
-class OctoDashLogic : public QObject
+class OctoDashScene : public QGraphicsScene
 {
   Q_OBJECT
 public:
-  explicit OctoDashLogic(OctoDash* dash);
-  ~OctoDashLogic();
+  explicit OctoDashScene();
+  ~OctoDashScene();
 
 signals:
   void hideDashScreen();

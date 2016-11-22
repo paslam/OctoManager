@@ -15,9 +15,6 @@ TEMPLATE = app
 SOURCES +=\
     OctoClient.cpp \
     OctoClientManagerView.cpp \
-    OctoDash.cpp \
-    OctoDashLogic.cpp \
-    OctoDashScreen.cpp \
     OctoManagerView.cpp \
     OctoProject.cpp \
     OctoProjectManagerView.cpp \
@@ -29,14 +26,12 @@ SOURCES +=\
     OctoButtonProject.cpp \
     OctoButtonManager.cpp \
     OctoItem.cpp \
-    OctoButtonItem.cpp
+    OctoButtonItem.cpp \
+    OctoDashView.cpp \
+    OctoDashScene.cpp
 
 HEADERS  += \
     OctoClient.h \
-    OctoClientmanagerview.h \
-    OctoDash.h \
-    OctoDashLogic.h \
-    OctoDashScreen.h \
     OctoManagerView.h \
     OctoProject.h \
     OctoProjectManagerView.h \
@@ -47,7 +42,10 @@ HEADERS  += \
     OctoButtonProject.h \
     OctoButtonManager.h \
     OctoItem.h \
-    OctoButtonItem.h
+    OctoButtonItem.h \
+    OctoDashView.h \
+    OctoDashScene.h \
+    OctoClientManagerview.h
 
 FORMS += \
     OctoManagerView.ui \

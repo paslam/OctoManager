@@ -7,10 +7,10 @@
 
 #include <QDir>
 
-OctoButtonProject::OctoButtonProject(OctoProject* project, QWidget* parent)
-  : OctoButtonItem(50, parent), m_project(project)
+OctoButtonProject::OctoButtonProject(OctoProject* project)
+  : OctoButtonItem(project, 50), m_project(project)
 {
-  setText(project->name());
+  //setText(project->name());
   connect(this, SIGNAL(clicked()), SLOT(onClick()));
 }
 

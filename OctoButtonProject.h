@@ -8,7 +8,7 @@ class OctoButtonProject : public OctoButtonItem
 {
   Q_OBJECT
 public:
-  OctoButtonProject(OctoProject* project, QWidget* parent = 0);
+  OctoButtonProject(OctoProject* project);
   ~OctoButtonProject();
 
 private slots:

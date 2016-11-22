@@ -1,4 +1,4 @@
-#include "OctoDashScreen.h"
+#include "OctoDashView.h"
 #include <QApplication>
 #include <QProxyStyle>
 #include <QFile>
@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
   QString styleSheet = QLatin1String(file.readAll());
   a.setStyleSheet(styleSheet);
 
-  OctoDashScreen dashScreen;
+  OctoDashView dashScreen;
   dashScreen.show();
 
   return a.exec();

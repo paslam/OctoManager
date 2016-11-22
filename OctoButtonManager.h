@@ -6,11 +6,15 @@ class OctoButtonManager : public OctoButtonItem
 {
   Q_OBJECT
 public:
-  OctoButtonManager(QWidget* parent = 0);
+  OctoButtonManager();
   ~OctoButtonManager();
 
 signals:
   void showManager();
+  void showFolder(const QString& path);
+
+private:
+  static OctoItem* s_itemManager;
 };
 
 #endif // OCTOBUTTONMANAGER_H
