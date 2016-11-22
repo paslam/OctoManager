@@ -1,8 +1,8 @@
 #ifndef OCTOBUTTONMANAGER_H
 #define OCTOBUTTONMANAGER_H
 
-#include "OctoButton.h"
-class OctoButtonManager : public OctoButton
+#include "OctoButtonItem.h"
+class OctoButtonManager : public OctoButtonItem
 {
   Q_OBJECT
 public:

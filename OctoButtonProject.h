@@ -1,10 +1,10 @@
 #ifndef OCTOBUTTONPROJECT_H
 #define OCTOBUTTONPROJECT_H
 
-#include "OctoButton.h"
+#include "OctoButtonItem.h"
 
 class OctoProject;
-class OctoButtonProject : public OctoButton
+class OctoButtonProject : public OctoButtonItem
 {
   Q_OBJECT
 public:
