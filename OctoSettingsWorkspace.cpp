@@ -5,7 +5,7 @@
 #include <QDir>
 
 OctoSettingsWorkspace::OctoSettingsWorkspace(OctoSettingsGeneral* generalSettings)
-  : QSettings(generalSettings->workspaceDir() + "/.octoworkspace", QSettings::IniFormat, generalSettings),
+  : QSettings(generalSettings->workspaceDir() + "/.octoworkspace", QSettings::IniFormat),
     m_generalSettings(generalSettings)
 {
   beginGroup("Workspace");

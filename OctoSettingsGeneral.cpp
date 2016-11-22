@@ -3,11 +3,10 @@
 #include <QApplication>
 #include <QDir>
 
-OctoSettingsGeneral::OctoSettingsGeneral(QObject* parent) :
+OctoSettingsGeneral::OctoSettingsGeneral() :
   QSettings(QSettings::IniFormat, QSettings::UserScope,
             QApplication::organizationName(),
-            QApplication::applicationName(),
-            parent)
+            QApplication::applicationName())
 {
   beginGroup("General");
 
