@@ -1,8 +1,8 @@
 #include "OctoItem.h"
 #include <QUuid>
 
-OctoItem::OctoItem(QObject *parent) :
-  QObject(parent)
+OctoItem::OctoItem(OctoItem *parent) :
+  m_parent(parent)
 {
   m_uuid = QUuid::createUuid().toString();
 }
@@ -30,4 +30,24 @@ QString OctoItem::uuid() const
 void OctoItem::setUuid(const QString &uuid)
 {
   m_uuid = uuid;
+}
+
+QString OctoItem::path() const
+{
+  return hasParent() ? (parent()->path() + "/" + name()) : name();
+}
+
+OctoItem *OctoItem::parent()
+{
+  return m_parent;
+}
+
+const OctoItem *OctoItem::parent() const
+{
+  return m_parent;
+}
+
+bool OctoItem::hasParent() const
+{
+  return m_parent;
 }

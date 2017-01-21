@@ -9,7 +9,7 @@ class StyleTweaks : public QProxyStyle
     void drawPrimitive(PrimitiveElement element, const QStyleOption *option,
                        QPainter *painter, const QWidget *widget) const
     {
-      /* do not draw focus rectangles - this permits modern styling */
+      // do not draw focus rectangles - this permits modern styling
       if (element == QStyle::PE_FrameFocusRect)
           return;
 
@@ -38,6 +38,7 @@ int main(int argc, char *argv[])
   return a.exec();
 }
 
-//2016/11/04 2h
-//2016/11/18 3h
-//2016/11/20 4h
+//2016/11/04 2h setup
+//2016/11/18 3h prototypage
+//2016/11/20 4h settings
+//2016/01/21 3.5h interface

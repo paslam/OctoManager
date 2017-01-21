@@ -18,6 +18,10 @@ signals:
 public slots:
   void showManager();
   void showFolder(const QString& folder);
+  void copyPath(const QString& path);
+
+protected:
+  void mousePressEvent(QGraphicsSceneMouseEvent *event);
 
 private:
   OctoManagerView* m_managerView;

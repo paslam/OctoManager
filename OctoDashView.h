@@ -13,10 +13,7 @@ public:
   explicit OctoDashView(QWidget *parent = 0);
   ~OctoDashView();
 
-protected:
-  void mousePressEvent(QMouseEvent *);
 
-  void mousePressEvent(QGraphicsSceneMouseEvent *event);
 private:
   OctoDashScene* m_dashScene;
 };

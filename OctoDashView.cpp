@@ -6,6 +6,9 @@
 #include <QGraphicsScene>
 #include <QDebug>
 #include <QMouseEvent>
+#include <QApplication>
+
+#include "qxtglobalshortcut.h"
 
 OctoDashView::OctoDashView(QWidget *parent) : QGraphicsView(parent)
 {
@@ -20,6 +23,10 @@ OctoDashView::OctoDashView(QWidget *parent) : QGraphicsView(parent)
   connect(m_dashScene, SIGNAL(hideDashScreen()), SLOT(hide()));
 
   showFullScreen();
+
+  QxtGlobalShortcut* showShortcut = new QxtGlobalShortcut(this);
+  showShortcut->setShortcut(QKeySequence(Qt::CTRL + Qt::ALT + Qt::Key_Z));
+  connect(showShortcut, SIGNAL(activated()), SLOT(showFullScreen()));
 }
 
 OctoDashView::~OctoDashView()
@@ -27,10 +34,4 @@ OctoDashView::~OctoDashView()
   delete m_dashScene;
 }
 
-void OctoDashView::mousePressEvent(QMouseEvent *event)
-{
-  if (scene()->itemAt(event->pos(), transform()) == NULL)
-  {
-    close();
-  }
-}
+

@@ -1,7 +1,7 @@
 #include "OctoManagerView.h"
 #include "ui_OctoManagerView.h"
 #include "OctoProjectManagerView.h"
-#include "OctoClientManagerview.h"
+#include "OctoClientManagerView.h"
 #include "OctoSettingsView.h"
 #include "OctoSettings.h"
 #include "OctoClient.h"

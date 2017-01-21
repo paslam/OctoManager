@@ -5,10 +5,12 @@
 
 class OctoClient : public OctoItem
 {
-  Q_OBJECT
 public:
-  explicit OctoClient(QObject *parent = 0);
-  ~OctoClient();
+  explicit OctoClient(OctoItem *parent = 0);
+  virtual ~OctoClient();
+
+  virtual QString avatarPath() const;
+  virtual bool hasAvatar() const;
 };
 
 #endif // OCTOCLIENT_H

@@ -12,10 +12,12 @@ public:
   ~OctoButtonProject();
 
 private slots:
-  void onClick();
+  void onLeftClick();
+  void onRightClick();
 
 signals:
   void showFolder(const QString& path);
+  void copyPath(const QString& path);
 
 private:
   OctoProject* m_project;

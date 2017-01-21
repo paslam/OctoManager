@@ -12,7 +12,7 @@ OctoButtonManager::OctoButtonManager()
   : OctoButtonItem(s_itemManager, 75)
 {
   //setText("OM");
-  //connect(this, SIGNAL(clicked()), SIGNAL(showManager()));
+  connect(this, SIGNAL(clickedLeft()), SIGNAL(showManager()));
 
   const QList<OctoProject*> & projects = settings()->workspace()->projects();
   OctoProject* activeProject = settings()->workspace()->activeProject();
@@ -28,6 +28,7 @@ OctoButtonManager::OctoButtonManager()
     OctoProject* project = projects[offsetId];
     OctoButtonProject* itemProject = new OctoButtonProject(project);
     connect(itemProject, SIGNAL(showFolder(QString)), SIGNAL(showFolder(QString)));
+    connect(itemProject, SIGNAL(copyPath(QString)), SIGNAL(copyPath(QString)));
 
     double angle = (2*M_PI / projects.count()) * i - M_PI/2;
     double totalRadius = radius() + itemProject->radius() + 20;

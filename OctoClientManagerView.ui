@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>342</width>
-    <height>108</height>
+    <width>318</width>
+    <height>118</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -39,14 +39,26 @@
     </rect>
    </property>
   </widget>
-  <widget class="QWidget" name="widget" native="true">
+  <widget class="QPushButton" name="btnAvatar">
    <property name="geometry">
     <rect>
-     <x>210</x>
+     <x>200</x>
      <y>20</y>
-     <width>81</width>
-     <height>71</height>
+     <width>91</width>
+     <height>81</height>
     </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::ClickFocus</enum>
+   </property>
+   <property name="text">
+    <string>Avatar...</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>70</width>
+     <height>70</height>
+    </size>
    </property>
   </widget>
  </widget>

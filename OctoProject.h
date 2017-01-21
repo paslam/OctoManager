@@ -6,10 +6,9 @@
 class OctoClient;
 class OctoProject : public OctoItem
 {
-  Q_OBJECT
 public:
   explicit OctoProject(OctoClient* client);
-  ~OctoProject();
+  virtual ~OctoProject();
 
   OctoClient* client() const;
 

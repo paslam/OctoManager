@@ -12,6 +12,7 @@ public:
 signals:
   void showManager();
   void showFolder(const QString& path);
+  void copyPath(const QString& path);
 
 private:
   static OctoItem* s_itemManager;

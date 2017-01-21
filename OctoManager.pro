@@ -4,6 +4,8 @@
 #
 #-------------------------------------------------
 
+include(qxtglobalshortcut5/qxt.pri)
+
 QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -28,7 +30,8 @@ SOURCES +=\
     OctoItem.cpp \
     OctoButtonItem.cpp \
     OctoDashView.cpp \
-    OctoDashScene.cpp
+    OctoDashScene.cpp \
+    OctoTextItem.cpp
 
 HEADERS  += \
     OctoClient.h \
@@ -45,7 +48,8 @@ HEADERS  += \
     OctoButtonItem.h \
     OctoDashView.h \
     OctoDashScene.h \
-    OctoClientManagerview.h
+    OctoTextItem.h \
+    OctoClientManagerView.h
 
 FORMS += \
     OctoManagerView.ui \

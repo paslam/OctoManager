@@ -4,12 +4,13 @@
 #include <QSettings>
 
 class OctoClient;
+class OctoItem;
 class OctoSettingsGeneral : public QSettings
 {
   Q_OBJECT
 public:
   explicit OctoSettingsGeneral();
-  ~OctoSettingsGeneral();
+  virtual ~OctoSettingsGeneral();
 
   void setWorkspaceDir(const QString& path);
   QString workspaceDir() const;
@@ -25,6 +26,7 @@ private:
   void loadClients();
   QList<OctoClient*> m_clients;
   QMap<QString, OctoClient*> m_clientsMap;
+  OctoItem* m_workspaceItem;
 };
 
 #endif // OCTOGENERALSETTINGS_H

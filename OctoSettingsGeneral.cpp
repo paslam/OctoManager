@@ -2,19 +2,24 @@
 #include "OctoClient.h"
 #include <QApplication>
 #include <QDir>
+#include "OctoItem.h"
 
 OctoSettingsGeneral::OctoSettingsGeneral() :
   QSettings(QSettings::IniFormat, QSettings::UserScope,
             QApplication::organizationName(),
             QApplication::applicationName())
 {
+
   beginGroup("General");
+  m_workspaceItem = new OctoItem;
+  m_workspaceItem->setName(workspaceDir());
 
   loadClients();
 }
 
 OctoSettingsGeneral::~OctoSettingsGeneral()
 {
+  delete m_workspaceItem;
   endGroup();
 }
 
@@ -23,6 +28,7 @@ void OctoSettingsGeneral::setWorkspaceDir(const QString &path)
   if(path != workspaceDir())
   {
     setValue("WorkspaceDir", path);
+    m_workspaceItem->setName(path);
     emit workspaceDirChanged(path);
   }
 }
@@ -63,13 +69,18 @@ const QList<OctoClient*> &OctoSettingsGeneral::clients() const
 
 void OctoSettingsGeneral::loadClients()
 {
+  for(int i = 0; i < m_clients.size(); ++i)
+  {
+    delete m_clients[i];
+  }
+
   m_clients.clear();
   m_clientsMap.clear();
   int size = beginReadArray("Clients");
   for(int i = 0; i < size; ++i)
   {
     setArrayIndex(i);
-    OctoClient* client = new OctoClient(this);
+    OctoClient* client = new OctoClient(m_workspaceItem);
     client->setName(value("Name").toString());
     client->setUuid(value("Uuid").toString());
     m_clients << client;

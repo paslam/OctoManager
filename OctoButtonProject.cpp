@@ -1,8 +1,6 @@
 #include "OctoButtonProject.h"
 #include "OctoProject.h"
 
-//TODO REMOVE THESE DEPS
-#include <OctoSettings.h>
 #include "OctoClient.h"
 
 #include <QDir>
@@ -10,8 +8,9 @@
 OctoButtonProject::OctoButtonProject(OctoProject* project)
   : OctoButtonItem(project, 50), m_project(project)
 {
-  //setText(project->name());
-  connect(this, SIGNAL(clicked()), SLOT(onClick()));
+  connect(this, SIGNAL(clickedLeft()), SLOT(onLeftClick()));
+  connect(this, SIGNAL(clickedRight()), SLOT(onRightClick()));
+  setIconPath(project->client()->avatarPath());
 }
 
 OctoButtonProject::~OctoButtonProject()
@@ -19,12 +18,13 @@ OctoButtonProject::~OctoButtonProject()
 
 }
 
-void OctoButtonProject::onClick()
+void OctoButtonProject::onLeftClick()
 {
-  //TODO REMOVE THESE DEPS
-  QString path = settings()->general()->workspaceDir();
-  path += QDir::separator() + m_project->client()->name();
-  path += QDir::separator() + m_project->name();
-  emit showFolder(path);
+  emit showFolder(m_project->path());
+}
+
+void OctoButtonProject::onRightClick()
+{
+  emit copyPath(m_project->path());
 }
 
